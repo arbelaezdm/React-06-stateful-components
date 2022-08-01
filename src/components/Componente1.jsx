@@ -17,6 +17,20 @@ export default class Componente1 extends Component {
         })
     }
 
+    decrementarValor () {
+        this.setState ({
+            valor: this.state.valor - 1,
+            valor2: this.state.valor2 - 2
+        })
+    }
+
+    resetContador () {
+        this.setState({
+            valor: this.state.valor = 0,
+            valor2: this.state.valor2 = 0
+        })
+    }
+
   render() {
     return (
         <div>
@@ -24,7 +38,15 @@ export default class Componente1 extends Component {
            <h2>Valor Contador Dos: {this.state.valor2}</h2>
             <button
                 onClick={()=>this.aumentarValor()}
-            >Aumentar Contadores</button>
+            >Aumentar Contadores</button><br />
+            <br />
+            <button
+                onClick={()=>this.decrementarValor()}
+            >Decrementar Contadores</button><br />
+            <br />
+            <button
+                onClick={()=>this.resetContador()}
+            >Reset Contadores</button>
         </div> 
     )
   } 
